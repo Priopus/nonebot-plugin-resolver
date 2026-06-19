@@ -862,7 +862,7 @@ def format_bili_comments_to_nodes(bot_id, comments: list, title: str, nickname: 
             for emo in c["emojis"]: node_msg.append(MessageSegment.image(emo))
 
         nodes.append(MessageSegment.node_custom(
-            user_id="80000000",
+            user_id=bot_id,
             nickname=nickname,
             content=node_msg
         ))
@@ -927,7 +927,7 @@ def format_comments_to_nodes(bot_id, comments: List[Dict[str, Any]], title: str,
         # 封包
         nodes.append(
             MessageSegment.node_custom(
-                user_id=user_id,
+                user_id=bot_id,
                 nickname=nickname,
                 content=node_msg
             )

@@ -827,7 +827,7 @@ def format_bili_comments_to_nodes(bot_id, comments: list, title: str, nickname: 
     """B站评论区合并转发封装 (数据级多媒体字节流推送，解决裂图与静止)"""
     nodes = []
     nodes.append(MessageSegment.node_custom(
-        user_id="80000000",
+        user_id=bot_id,
         nickname=nickname,
         content=Message(f"💬 《{title}》 热门评论")
     ))
@@ -877,7 +877,7 @@ def format_comments_to_nodes(bot_id, comments: List[Dict[str, Any]], title: str,
 
     # 1. 头部卡片
     nodes.append(MessageSegment.node_custom(
-        user_id=user_id,
+        user_id=bot_id,
         nickname=nickname,
         content=Message(f"💬 《{title}》 热门评论")
     ))
